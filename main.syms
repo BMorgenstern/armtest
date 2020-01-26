@@ -1,0 +1,12 @@
+
+
+Symbols from main.elf:
+
+Name                  Value   Class        Type         Size     Line  Section
+
+_start              |00000000|   A  |            NOTYPE|        |     |*ABS*
+square(int)         |08000000|   T  |              FUNC|00000008|     |.text
+sum(int, int)       |08000008|   T  |              FUNC|00000004|     |.text
+func(int)           |0800000c|   T  |              FUNC|00000014|     |.text
+main                |08000024|   T  |              FUNC|00000004|     |.text.startup
+exfunc              |08000028|   D  |            OBJECT|00000004|     |.data
