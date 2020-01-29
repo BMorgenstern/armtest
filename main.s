@@ -8,95 +8,81 @@
 	.eabi_attribute 30, 4
 	.eabi_attribute 34, 0
 	.eabi_attribute 18, 4
-	.file	"main.cpp"
+	.file	"preprocessed.cpp"
 	.text
 	.align	1
-	.global	_Z6squarei
+	.global	_Z1cv
 	.arch armv4t
 	.syntax unified
 	.code	16
 	.thumb_func
 	.fpu softvfp
-	.type	_Z6squarei, %function
-_Z6squarei:
+	.type	_Z1cv, %function
+_Z1cv:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-	movs	r3, r0
-	muls	r3, r0
-	@ sp needed
-	movs	r0, r3
-	bx	lr
-	.size	_Z6squarei, .-_Z6squarei
-	.align	1
-	.global	_Z3sumii
-	.syntax unified
-	.code	16
-	.thumb_func
-	.fpu softvfp
-	.type	_Z3sumii, %function
-_Z3sumii:
-	@ Function supports interworking.
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	@ link register save eliminated.
-	adds	r0, r0, r1
-	@ sp needed
-	bx	lr
-	.size	_Z3sumii, .-_Z3sumii
-	.align	1
-	.global	_Z4funci
-	.syntax unified
-	.code	16
-	.thumb_func
-	.fpu softvfp
-	.type	_Z4funci, %function
-_Z4funci:
-	@ Function supports interworking.
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, lr}
-	ldr	r3, .L4
+	ldr	r3, .L6
 	ldr	r3, [r3]
-	bl	.L6
-	@ sp needed
-	pop	{r4}
-	pop	{r1}
-	bx	r1
-.L5:
-	.align	2
-.L4:
-	.word	.LANCHOR0
-	.size	_Z4funci, .-_Z4funci
-	.section	.text.startup,"ax",%progbits
-	.align	1
-	.global	main
-	.syntax unified
-	.code	16
-	.thumb_func
-	.fpu softvfp
-	.type	main, %function
-main:
-	@ Function supports interworking.
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 0, uses_anonymous_args = 0
-	@ link register save eliminated.
-	movs	r0, #0
+	ldr	r0, [r3]
+	cmp	r0, #1
+	beq	.L1
+	movs	r0, #3
+.L1:
 	@ sp needed
 	bx	lr
-	.size	main, .-main
-	.global	exfunc
+.L7:
+	.align	2
+.L6:
+	.word	.LANCHOR0
+	.size	_Z1cv, .-_Z1cv
+	.global	GAMECONTROLLER9
+	.global	GAMECONTROLLER8
+	.global	GAMECONTROLLER7
+	.global	GAMECONTROLLER6
+	.global	GAMECONTROLLER5
+	.global	GAMECONTROLLER4
+	.global	GAMECONTROLLER3
+	.global	GAMECONTROLLER2
+	.global	GAMECONTROLLER0
 	.data
 	.align	2
 	.set	.LANCHOR0,. + 0
-	.type	exfunc, %object
-	.size	exfunc, 4
-exfunc:
-	.word	_Z6squarei
+	.type	GAMECONTROLLER0, %object
+	.size	GAMECONTROLLER0, 4
+GAMECONTROLLER0:
+	.word	33705152
+	.type	GAMECONTROLLER9, %object
+	.size	GAMECONTROLLER9, 4
+GAMECONTROLLER9:
+	.word	2
+	.type	GAMECONTROLLER8, %object
+	.size	GAMECONTROLLER8, 4
+GAMECONTROLLER8:
+	.word	151060480
+	.type	GAMECONTROLLER7, %object
+	.size	GAMECONTROLLER7, 4
+GAMECONTROLLER7:
+	.word	134308896
+	.type	GAMECONTROLLER6, %object
+	.size	GAMECONTROLLER6, 4
+GAMECONTROLLER6:
+	.word	33793516
+	.type	GAMECONTROLLER5, %object
+	.size	GAMECONTROLLER5, 4
+GAMECONTROLLER5:
+	.word	33734220
+	.type	GAMECONTROLLER4, %object
+	.size	GAMECONTROLLER4, 4
+GAMECONTROLLER4:
+	.word	19025088
+	.type	GAMECONTROLLER3, %object
+	.size	GAMECONTROLLER3, 4
+GAMECONTROLLER3:
+	.word	143142080
+	.type	GAMECONTROLLER2, %object
+	.size	GAMECONTROLLER2, 4
+GAMECONTROLLER2:
+	.word	67407040
 	.ident	"GCC: (devkitARM release 52) 8.3.0"
-	.text
-	.code 16
-	.align	1
-.L6:
-	bx	r3

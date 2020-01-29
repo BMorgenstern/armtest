@@ -1,12 +1,11 @@
-
-
-Symbols from main.elf:
-
-Name                  Value   Class        Type         Size     Line  Section
-
-_start              |00000000|   A  |            NOTYPE|        |     |*ABS*
-square(int)         |08000000|   T  |              FUNC|00000008|     |.text
-sum(int, int)       |08000008|   T  |              FUNC|00000004|     |.text
-func(int)           |0800000c|   T  |              FUNC|00000014|     |.text
-main                |08000024|   T  |              FUNC|00000004|     |.text.startup
-exfunc              |08000028|   D  |            OBJECT|00000004|     |.data
+00000000 A _start
+08000000 00000014 T c()
+08000014 00000004 D GAMECONTROLLER0
+08000018 00000004 D GAMECONTROLLER9
+0800001c 00000004 D GAMECONTROLLER8
+08000020 00000004 D GAMECONTROLLER7
+08000024 00000004 D GAMECONTROLLER6
+08000028 00000004 D GAMECONTROLLER5
+0800002c 00000004 D GAMECONTROLLER4
+08000030 00000004 D GAMECONTROLLER3
+08000034 00000004 D GAMECONTROLLER2

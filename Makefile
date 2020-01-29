@@ -1,6 +1,6 @@
-ARM = /home/brendan/Documents/devkitARM/
-PATH = $(shell pwd)
-SRC = $(PATH)/src
+ARM = /devkitARM/
+PRJTDIR = $(shell pwd)
+SRC = $(PRJTDIR)/src
 
 
 GCC = $(ARM)/bin/arm-none-eabi-g++
@@ -10,12 +10,18 @@ OBJCOPY = $(ARM)/bin/arm-none-eabi-objcopy
 NM = $(ARM)/bin/arm-none-eabi-nm
 OBJDUMP =  $(ARM)/bin/arm-none-eabi-objdump
 
-NMFLAGS =  --format=sysv -nSC
+NMFLAGS =  -p -nSC
 DISFLAGS = -d
 ASFLAGS = -g -mthumb-interwork -mcpu=arm7tdmi
 CFLAGS = -Os -mthumb -mcpu=arm7tdmi -fno-exceptions -fpermissive -fomit-frame-pointer
 LDFLAGS = -T hardware-offset.x -I $(ARM)/lib
 
+clean:
+	-rm -f main.o
+	-rm -f main.s
+	-rm -f main.bin
+	-rm -f main.elf
+	-rm -f main.syms
 
 disasm: main.o
 	$(OBJDUMP) $(DISFLAGS) main.o
@@ -30,5 +36,9 @@ link: obj
 obj: asm
 	$(AS) $(ASFLAGS) main.s -o main.o 
 
-asm:
-	$(GCC) $(CFLAGS) -S $(SRC)/main.cpp -o main.s
+asm: preprocess
+	$(GCC) $(CFLAGS) -S preprocessed.cpp -o main.s
+
+
+preprocess: $(SRC)/main.cpp
+	$(GCC) $(CFLAGS) -E $(SRC)/main.cpp -o preprocessed.cpp
